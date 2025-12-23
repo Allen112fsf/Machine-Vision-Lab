@@ -9,7 +9,7 @@ OUTPUT_DIR = './results/'
 # -------------
 
 def visualize_histogram(hist):
-    """使用 Matplotlib 可视化颜色直方图 (从折线图改为柱状直方图)"""
+    """使用 Matplotlib 可视化颜色直方图"""
     plt.figure(figsize=(10, 5)) 
     
     # 颜色通道映射
@@ -17,7 +17,6 @@ def visualize_histogram(hist):
     x = np.arange(256)
     
     for channel, data in hist.items():
-        # 将 plt.plot 改为 plt.bar 以实现直方图效果
         plt.bar(x, data, color=colors[channel], alpha=0.5, label=f'{channel} Channel', width=1.0)
     
     plt.title('Color Histogram')
